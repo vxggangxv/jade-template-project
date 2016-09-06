@@ -1,0 +1,71 @@
+//- ------------------
+//- 설정 변수
+//- ------------------
+//- 현재 페이지 경로
+-var curPage='/test-template.html'
+
+//- 믹스인
+//- 2Depth 내비게이션
+mixin navi(naviContents, attr)
+			nav&attributes(attr?attr:{}): ul
+				each D1_item in naviContents
+					li
+						+naviLink(D1_item)
+						if D1_item.child
+							ul
+								each D2_item in D1_item.child
+									li
+										+naviLink(D2_item)
+//- 내비게이션 메뉴 아이템 생성(재사용)
+mixin naviLink(item)
+			a(href=item.link, class=(curPage==item.link?'active':''))=item.content
+
+//- ------------------
+//- 문서
+//- ------------------
+//-doctylehtml
+include parts/_docHead
+	head
+		meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+		meta(charset="UTF-8")
+		title
+			Jade 템플릿 테스트 문서
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", href="css/template.css")
+		//-style
+			include ../../dist/css/template.css
+	body
+			//- 헤더 영역
+			header
+				.container.cf
+					h1#jade: a(href="http://jade-lang.com")
+						img(
+							src="images/jade-logo.png"
+							width="217"
+							height="120"
+							alt="Jade: Node Template Engine"
+						)
+					p 
+						include parts/_sloganText
+
+				//- 내비게이션 영역
+				include parts/_navigation
+
+			//- 메인 콘텐츠 영역
+			main.container.cf
+				.content
+					h2(lang="en") Jade Template
+					p  Jade 템플릿은 3가지 기능을 제공합니다.
+					ul
+						li
+							| 포함(
+							a(href="http://jade-lang.com/reference/includes/", target="_blank") includes
+							|)
+						li
+							| 확장(
+							a(href="http://jade-lang.com/reference/extends/", target="_blank") extends
+							|)
+						li
+							| 상속(
+							a(href="http://jade-lang.com/reference/inheritance/", target="_blank") inheritance
+							|)

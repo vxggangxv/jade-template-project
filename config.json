@@ -1,0 +1,10 @@
+{
+	"output": "./dist",
+	"input": "./src",
+
+	"port": 90,
+	"livereload": true,
+	"browser": "chrome",
+
+	"html_prettify": {"indent_char": " ", "indent_size": 2}
+}

@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+/*웹폰트*/
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+
+/*선택 블록 색상 설정*/
+::selection {
+	background: #1BA8CB;
+	color: #fff;
+}
+::-moz-selection {
+	background: #1BA8CB;
+	color: #fff;
+}
+
+/*기본설정*/
+html {
+	overflow-y: scroll;
+	font-size: 10px;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	color: #313932;
+}
+body * {
+	margin: 0;
+	box-sizing: border-box;
+	font: 1.6rem/1.5 'Jeju Myeongjo', serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	position: relative;
+	font-size: 3.2rem;
+	color: #168BA9;
+}
+
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+	content: '';
+	position: absolute;
+	left: -1rem;
+	top: 0.3rem;
+	width: 0.8rem;
+	height: 0.8rem;
+	background:  #ACF307;
+}
+p {
+	margin-bottom: 2.1rem;
+}
+
+/*영어 서체 설정*/
+[lang=en] {
+	font-family: 'Droid Serif', serif;
+	letter-spacing: -0.06em;
+}
+
+/*모듈*/
+.cf::before,
+.cf::after {
+	content: '';
+	display: table;
+}
+.cf::after {
+	clear: both;
+}
+.container {
+	max-width: 94rem;
+	/*min-width: 48rem;*/
+	margin: 0 auto;
+	padding: 2rem 10% 1rem;
+}
+
+/*=HEADER*/
+header {
+	max-height: 195px;
+	background-color: #168BA9;
+	background-image: linear-gradient(#168BA9 80%, #137993);
+	color: #fff;
+}
+header p {
+	margin-top: 4.6rem;
+	margin-bottom: 0;
+	font-size: 1.4rem;
+}
+header p::after {
+	content: '─';
+	margin-left: .5rem;
+}
+
+/*=#JADE*/
+#jade {
+	float: left;
+	margin-left: -1rem;
+	margin-right: 2.2rem;
+}
+#jade a {
+	display: block;
+}
+#jade a img {
+	vertical-align: bottom;
+}
+
+/*=#GNB*/
+#gnb {
+	position: relative;
+	border-top: .1rem solid  #63ADCD;
+	padding-top: 0;
+	background-color: #168BA9;
+	background-image: linear-gradient(#158FAE, #169AA9);
+}
+#gnb ul {
+	list-style: none;
+	border-top: .2rem solid  #63ADCD;
+	padding-top: 1rem;
+	padding-left: 0;
+}
+#gnb ul li {
+	display: inline-block;
+}
+#gnb ul a {
+	margin-right: .1rem;
+	border-top-width: 0.1rem;
+	padding:0 .8rem;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.3rem;
+	font-family: 'Jeju Gothic';
+	text-shadow: 0 0.1rem 0.1rem #14535A;
+	transition: all .3s ease-out;
+}
+#gnb ul a:hover,
+#gnb ul a:focus,
+#gnb ul a.active {
+	border-top: 3px solid;
+	padding-top: 1.4rem;
+	padding-bottom: 1.6rem;
+	/*background-color: #15B3A7;*/
+	background-image: linear-gradient(#15B3A7, transparent);
+	box-shadow: 0 0.1rem 0.1rem #218192;
+}
+#gnb ul a:focus {
+	outline: none;
+}
+
+/*=MAIN*/
+main.container {
+	padding-top: 4rem;
+}
+main.container h2 {
+	margin-bottom: 1.3rem;
+}
+main .content {
+	width: 80%;
+}
+main ul {
+	margin-top: 0;
+	padding-left: 1.7rem;
+}
+main li {
+	list-style: circle;
+}
+
+a {
+	text-decoration: none;
+	color: #158FAE;
+}
+a:hover, a:focus {
+	color: #0F4148;
+}
+main a:focus {
+	outline: none;
+	padding-bottom: .2rem;
+	border-bottom: 1px solid;
+}
+
+
+/*반응형: 모바일 480px*/
+@media only screen and (max-device-width: 480px) {
+	#jade {
+		float: none;
+		margin: 0;
+		text-align: center;
+	}
+	#jade+p {
+		margin-top: 0.6rem;
+	}
+	header p {
+		margin-top: 3.7rem;
+	}
+	main.container {
+		padding-top: 6rem;
+	}
+	main .content {
+		width: auto;
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "jade-html-template-engine",
+  "version": "0.0.0",
+  "description": "Jade 템플릿 엔진",
+  "author": "joon9 <vxggangxv@naver.com> (http://toxnsldxn.cafe24.com)",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-connect": "^2.2.0",
+    "gulp-html-prettify": "0.0.1",
+    "gulp-if": "^1.2.5",
+    "gulp-jade": "^0.10.0",
+    "gulp-open": "^0.3.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-watch": "^3.0.0"
+  }
+}
